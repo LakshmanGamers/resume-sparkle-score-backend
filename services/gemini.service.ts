@@ -139,6 +139,9 @@ export async function getResumeReviewFromFile(file: { buffer: Buffer; mimeType: 
     if (!isValidResumeReview(parsedData)) {
         throw new Error("Failed to parse valid resume review data from the API.");
     }
+
+    console.log("Resume review:", parsedData);
+
     return parsedData;
   } catch (error) {
     console.log("Error getting resume review from Gemini:", error);
@@ -189,6 +192,8 @@ export async function getJobMatchFromFileAndDescription(file: { buffer: Buffer; 
     if (!isValidJobMatch(parsedData)) {
       throw new Error("Failed to parse valid job match data from the API.");
     }
+    console.log("Job match:", parsedData);
+
     return parsedData;
   } catch (error) {
     console.log("Error getting job match from Gemini:", error);
